@@ -29,7 +29,10 @@
     "typescript": "^4.5.2"
   },
   "dependencies": {
+    "@sanity/client": "^6.4.6",
     "cli": "^1.0.1",
+    "gatsby": "^5.11.0",
+    "gatsby-source-sanity": "^7.8.1",
     "sanity": "^3.14.5"
   }
 }

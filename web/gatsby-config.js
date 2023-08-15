@@ -1,9 +1,9 @@
-require('dotenv').config('./.env');
+require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
     title: `BebyBlog`,
-    siteUrl: `https://bebyblog.sanity.studio/desk/blog;7ec45f34-5386-40e1-bb64-a923c5b94af4`,
+    siteUrl: 'https://Google.com',
     description: `Bebyblog, блог для мам и их малышей, а также про здоровье наших детей`,
   },
   plugins: [
@@ -12,5 +12,13 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'eatqyeu8',
+        dataset: 'production',
+        // token: "ваш_api_token", // опционально, если у вас есть приватный dataset
+      },
+    },
   ],
 };

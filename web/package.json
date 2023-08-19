@@ -1,9 +1,9 @@
 {
-  "name": "beby-blog",
+  "name": "tech-hub",
   "version": "1.0.0",
   "private": true,
-  "description": "Bebyblog",
-  "author": "Ryaska Roman",
+  "description": "techHub",
+  "author": "shaif arfan",
   "keywords": [
     "gatsby"
   ],
@@ -43,15 +43,5 @@
   },
   "devDependencies": {
     "dotenv": "^16.0.0"
-  },
-  "main": ".eslintrc.js",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/Mohito777/BebyBlog.git"
-  },
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Mohito777/BebyBlog/issues"
-  },
-  "homepage": "https://github.com/Mohito777/BebyBlog#readme"
+  }
 }

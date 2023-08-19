@@ -3,31 +3,31 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 /* eslint-enable */
 
-// Импорт кастомных Документов
+// import document schemas
 import blog from './documents/blog';
-import author from './documents/author';
 import category from './documents/category';
+import author from './documents/author';
 import featured from './documents/featured';
 
-// Импорт кастомных обЪектов
-import customImage from './objects/customImage';
+// import object
 import richText from './objects/richText';
-import customCode from './objects/customCode';
 import normalText from './objects/normalText';
+import customImage from './objects/customImage';
+import customCode from './objects/customCode';
 
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
-    // документы
+    // document schemas
     blog,
-    author,
     category,
+    author,
     featured,
 
-    // обьекты
-    customImage,
-    richText,
-    customCode,
+    // object schemas
     normalText,
+    richText,
+    customImage,
+    customCode,
   ]),
 });

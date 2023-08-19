@@ -11,9 +11,8 @@ export default {
       name: 'title',
       type: 'string',
     },
-
     {
-      name: 'blog',
+      name: 'blogs',
       title: 'Featured Blogs',
       type: 'array',
       of: [
@@ -29,7 +28,7 @@ export default {
     },
     {
       name: 'category',
-      title: 'Featured Top Categories',
+      title: 'Featured Top category',
       type: 'array',
       of: [
         {

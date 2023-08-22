@@ -39,7 +39,7 @@ function FeaturedBlogs() {
     <FeaturedBlogsStyles>
       <SectionTitle> Категории </SectionTitle>
       <ParagraphText className="featuredBlogs__text">
-        О детях, наших любимках и не только . f
+        О детях, наших любимках, и не только .
       </ParagraphText>
       <BlogGrid blogs={featuredBlogs} />
     </FeaturedBlogsStyles>

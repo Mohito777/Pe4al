@@ -13,22 +13,22 @@ function BlogItem({ path, title, image, categories, publishedAt }) {
         <GatsbyImage
           image={image.imageData}
           alt={image.altText}
-          className='img'
+          className="img"
         />
       </Link>
       <Link to={`/blogs/${path}`}>
-        <Title className='title'>{title}</Title>
+        <Title className="title">{title}</Title>
       </Link>
       {publishedAt && (
-        <ParagraphText className='publishedAt'>
-          {format(new Date(publishedAt), "p, MMMM dd, yyyy")}
+        <ParagraphText className="publishedAt">
+          {format(new Date(publishedAt), 'p, MMMM dd, yyyy')}
         </ParagraphText>
       )}
-      <ParagraphText className='categoriesText'>
+      <ParagraphText className="categoriesText">
         {categories.map((item, index) => (
           <span key={item.slug.current}>
             <Link to={`/categories/${item.slug.current}`}>{item.title}</Link>
-            {index < categories.length - 1 ? ", " : ""}
+            {index < categories.length - 1 ? ', ' : ''}
           </span>
         ))}
       </ParagraphText>

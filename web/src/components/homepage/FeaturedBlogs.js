@@ -37,7 +37,7 @@ function FeaturedBlogs() {
   const featuredBlogs = data.allSanityFeatured.nodes[0].blogs;
   return (
     <FeaturedBlogsStyles>
-      <SectionTitle> Категории </SectionTitle>
+      <SectionTitle> Популярные посты </SectionTitle>
       <ParagraphText className="featuredBlogs__text">
         О детях, наших любимках, и не только .
       </ParagraphText>

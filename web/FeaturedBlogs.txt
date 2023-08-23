@@ -1,0 +1,39 @@
+import { graphql, useStaticQuery } from 'gatsby';
+import React from 'react';
+
+// function FeaturedBlogs() {
+//   const data = useStaticQuery(graphql`
+//     {
+//       allSanityFeatured(filter: { _id: { eq: "featureditems" } }) {
+//         nodes {
+//           blogs {
+//             title
+//             id
+//             publishedAt
+//             categories {
+//               title
+//               slug {
+//                 current
+//               }
+//             }
+//             coverImage {
+//               alt
+//               asset {
+//                 gatsbyImageData
+//               }
+//             }
+//             slug {
+//               current
+//             }
+//           }
+//         }
+//       }
+//     }
+//   `);
+
+//   console.log(data);
+
+  return <div>FeaturedBlog </div>;
+}
+
+export default FeaturedBlogs;

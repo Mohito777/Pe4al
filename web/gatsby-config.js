@@ -1,4 +1,6 @@
-require('dotenv').config();
+const sanityConfig = require('./sanity-config');
+
+require('dotenv').config('./.env');
 
 module.exports = {
   siteMetadata: {
@@ -15,9 +17,14 @@ module.exports = {
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: 'eatqyeu8',
-        dataset: 'production',
+        ...sanityConfig,
         // token: "ваш_api_token", // опционально, если у вас есть приватный dataset
+      },
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/pages`,
       },
     },
   ],

@@ -9,7 +9,7 @@ export const menu = [
   },
   {
     title: 'Авторы',
-    path: '/author',
+    path: '/authors',
   },
   {
     title: 'Категории',

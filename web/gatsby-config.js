@@ -1,3 +1,4 @@
+const { isProd } = require('sanity');
 const sanityConfig = require('./sanity-config');
 
 require('dotenv').config('./.env');
@@ -18,6 +19,11 @@ module.exports = {
       resolve: 'gatsby-source-sanity',
       options: {
         ...sanityConfig,
+        projectId: 'eatqyeu8',
+        dataset: 'production2',
+        token: process.env.SANITY_TOKEN,
+        watchmode: !isProd,
+        overlayDrafts: !isProd,
         // token: "ваш_api_token", // опционально, если у вас есть приватный dataset
       },
     },

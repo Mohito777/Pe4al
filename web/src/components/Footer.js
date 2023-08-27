@@ -28,7 +28,7 @@ function Footer() {
             </li>
           ))}
         </ul>
-        <ParagraphText className="copyreight">
+        <ParagraphText className="copyright">
           ©️ Все права защищены RRV {new Date().getFullYear()}.
         </ParagraphText>
       </div>

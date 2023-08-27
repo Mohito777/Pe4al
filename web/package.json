@@ -1,9 +1,9 @@
 {
-  "name": "tech-hub",
+  "name": "beby-blog",
   "version": "1.0.0",
   "private": true,
-  "description": "techHub",
-  "author": "shaif arfan",
+  "description": "bebyblog",
+  "author": "Ryaska Roman",
   "keywords": [
     "gatsby"
   ],
@@ -18,7 +18,7 @@
     "@fontsource/inter": "^4.5.2",
     "@fontsource/poppins": "^4.5.1",
     "@portabletext/react": "^1.0.2",
-    "@sanity/asset-utils": "^1.2.3",
+    "@sanity/asset-utils": "^1.3.0",
     "axios": "^0.26.0",
     "babel-plugin-styled-components": "^2.0.2",
     "clsx": "^1.1.1",

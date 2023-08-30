@@ -1,13 +1,13 @@
-import React from "react";
-import { PortableText } from "@portabletext/react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import theme from "react-syntax-highlighter/dist/esm/styles/prism/vs-dark";
-import { GatsbyImage } from "gatsby-plugin-image";
-import { getImage, getImageDimensions } from "@sanity/asset-utils";
-import sanityConfig from "../../sanity-config";
-import { Title } from "./typography/Title";
-import ParagraphText from "./typography/ParagraphText";
-import { getSanityImageData } from "../utils/getSanityImageData";
+import React from 'react';
+import { PortableText } from '@portabletext/react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import theme from 'react-syntax-highlighter/dist/esm/styles/prism/vs-dark';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { getImage, getImageDimensions } from '@sanity/asset-utils';
+import sanityConfig from '../../sanity-config';
+import { Title } from './typography/Title';
+import ParagraphText from './typography/ParagraphText';
+import { getSanityImageData } from '../utils/getSanityImageData';
 
 const myPortableTextComponents = {
   block: {
@@ -16,9 +16,9 @@ const myPortableTextComponents = {
   },
   types: {
     customCode: ({ value }) => (
-      <SyntaxHighlighter style={theme} className='bodyCode'>
+      <SyntaxHighlighter style={theme} className="bodyCode">
         language={value.code.language} {/* Пропущен символ '{' */}
-        {String(value.code.code).replace(/\n$/, "")}
+        {String(value.code.code).replace(/\n$/, '')}
       </SyntaxHighlighter>
     ),
     customImage: ({ value }) => {
@@ -33,13 +33,13 @@ const myPortableTextComponents = {
 
       const gatsbyImageData = getSanityImageData({
         image,
-        layout: "constrained",
+        layout: 'constrained',
       });
       return (
         <GatsbyImage
           image={gatsbyImageData}
           alt={value.alt}
-          className='bodyImage'
+          className="bodyImage"
         />
       );
     },

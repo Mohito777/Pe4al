@@ -1,11 +1,11 @@
 {
-  "name": "techhub.blog",
+  "name": "bebyblog",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {},
   "keywords": [],
-  "author": "shaif arfan",
+  "author": "Ryaska Roman",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.0",

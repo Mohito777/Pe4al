@@ -1,24 +1,24 @@
-import React, { useContext, useState } from 'react';
-import { Link } from 'gatsby';
-import clsx from 'clsx';
-import { MdClose, MdMenu, MdSearch } from 'react-icons/md';
-import HeaderStyles from '../styles/HeaderStyles';
-import Logo from './Logo';
-import ActionButton from './buttons/ActionButton';
-import { menu } from '../constants/menu';
-import { SearchModalContext } from '../contexts/searchModalContext';
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "gatsby";
+import clsx from "clsx";
+import { MdClose, MdMenu, MdSearch } from "react-icons/md";
+import HeaderStyles from "../styles/HeaderStyles";
+import Logo from "./Logo";
+import ActionButton from "./buttons/ActionButton";
+import { menu } from "../constants/menu";
+import { SearchModalContext } from "../contexts/searchModalContext";
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const { openSearchModal } = useContext(SearchModalContext);
 
-  // useEffect(() => {
-  //   if (isNavOpen) {
-  //     document.body.style.overflow = 'hidden';
-  //   } else {
-  //     document.body.style.overflow = 'initial';
-  //   }
-  // }, [isNavOpen]);
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "initial";
+    }
+  }, [isNavOpen]);
 
   const handleSearchModalOpen = () => {
     openSearchModal();
@@ -32,26 +32,26 @@ function Header() {
 
   return (
     <HeaderStyles>
-      <div className="container">
-        <div className="header__container">
-          <div className="logo">
+      <div className='container'>
+        <div className='header__container'>
+          <div className='logo'>
             <Logo />
           </div>
-          <div className={clsx('nav__wrapper', isNavOpen && 'open')}>
-            <div className="mobileIcon">
-              <div className="searchIcon">
+          <div className={clsx("nav__wrapper", isNavOpen && "open")}>
+            <div className='mobileIcon'>
+              <div className='searchIcon'>
                 <div
-                  className="searchIcon__wrapper"
+                  className='searchIcon__wrapper'
                   onClick={handleSearchModalOpen}
                   onKeyDown={handleSearchModalOpen}
                   tabIndex={0}
-                  role="button"
+                  role='button'
                 >
                   <MdSearch />
                 </div>
               </div>
               <ActionButton
-                className="mobileMenuBtn"
+                className='mobileMenuBtn'
                 onKeyDown={() => setIsNavOpen(true)}
                 onClick={() => setIsNavOpen(true)}
               >
@@ -60,17 +60,17 @@ function Header() {
             </div>
             {isNavOpen && (
               <div
-                aria-label="Close Menu"
-                role="button"
+                aria-label='Close Menu'
+                role='button'
                 tabIndex={0}
-                className="mobileNavBg"
+                className='mobileNavBg'
                 onKeyDown={() => setIsNavOpen(false)}
                 onClick={() => setIsNavOpen(false)}
               />
             )}
             <nav>
               <ActionButton
-                className="mobileMenuCloseBtn"
+                className='mobileMenuCloseBtn'
                 onClick={() => setIsNavOpen(false)}
                 onKeyDown={() => setIsNavOpen(false)}
               >
@@ -84,13 +84,13 @@ function Header() {
                     </Link>
                   </li>
                 ))}
-                <li className="searchIcon">
+                <li className='searchIcon'>
                   <div
-                    className="searchIcon__wrapper"
+                    className='searchIcon__wrapper'
                     onClick={handleSearchModalOpen}
                     onKeyDown={handleSearchModalOpen}
-                    role="button"
                     tabIndex={0}
+                    role='button'
                   >
                     <MdSearch />
                   </div>

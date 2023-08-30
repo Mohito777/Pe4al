@@ -15,4 +15,8 @@ export const menu = [
     title: 'Категории',
     path: '/Categories',
   },
+  {
+    title: 'Войти', // Добавляем новый пункт меню
+    path: '/openModal',
+  },
 ];

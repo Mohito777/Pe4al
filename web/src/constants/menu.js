@@ -1,22 +1,23 @@
 export const menu = [
   {
-    title: 'Главная',
-    path: '/',
+    title: "Главная",
+    path: "/",
   },
   {
-    title: 'Блог',
-    path: '/blogs',
+    title: "Блог",
+    path: "/blogs",
   },
   {
-    title: 'Авторы',
-    path: '/authors',
+    title: "Авторы",
+    path: "/authors",
   },
   {
-    title: 'Категории',
-    path: '/Categories',
+    title: "Категории",
+    path: "/Categories",
   },
   {
-    title: 'Войти', // Добавляем новый пункт меню
-    path: '/openModal',
+    title: "Войти", // Добавляем новый пункт меню
+    path: "/LoginPage",
+    
   },
 ];

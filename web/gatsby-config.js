@@ -1,8 +1,8 @@
-require("dotenv").config("./.env");
+require("dotenv").config();
 
 const sanityConfig = require("./sanity-config");
 
-
+const { createProxyMiddleware } = require("http-proxy-middleware");
 
 module.exports = {
   siteMetadata: {
@@ -36,4 +36,16 @@ module.exports = {
       },
     },
   ],
+
+  // ...
+  developMiddleware: (app) => {
+    app.use(
+      "/api", // Путь, который будет проксироваться
+      createProxyMiddleware({
+        target: "http://localhost:8000", // Адрес вашего сервера
+        changeOrigin: true,
+      })
+    );
+  },
+  // ...
 };

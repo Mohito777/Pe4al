@@ -42,8 +42,9 @@ module.exports = {
     app.use(
       "/api", // Путь, который будет проксироваться
       createProxyMiddleware({
-        target: "http://localhost:8000", // Адрес вашего сервера
+        target: "http://localhost:80", // Адрес вашего сервера
         changeOrigin: true,
+        
       })
     );
   },

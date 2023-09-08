@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SingleBlogStyles = styled.div`
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
   .blog-cover-image {
     height: 300px;

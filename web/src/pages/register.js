@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { FaGoogle } from "react-icons/fa";
 import { Title } from "../components/typography/Title";
 import PageSpace from "../components/PageSpace";
 import SEO from "../components/SEO";
-import { FormGroup, Input, PrimaryButton } from "../styles/typography/FormLoginStyles";
+import { FormGroup, Input, PrimaryButton,LoginFormContainer } from "../styles/typography/FormLoginStyles";
 import useFirebase from "../utils/useFirebase";
 
 const RegistrationPage = () => {
@@ -20,11 +21,32 @@ const RegistrationPage = () => {
     }
   };
 
+  const handleGoogleLogin = async () => {
+    try {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      await firebase.auth().signInWithPopup(provider);
+      // Вход выполнен успешно, вы можете выполнить перенаправление на другую страницу
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  const handleEmailLogin = async () => {
+    try {
+      await firebase.auth().signInWithEmailAndPassword(email, password);
+      // Вход выполнен успешно, вы можете выполнить перенаправление на другую страницу
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  
+
   return (
     <div>
       <SEO title='Регистрация' />
       <PageSpace top={80} bottom={100}>
-        <div className='container'>
+        <LoginFormContainer>
           <Title>Регистрация</Title>
           {error && <div className='error-message'>{error}</div>}
           <FormGroup>
@@ -48,7 +70,9 @@ const RegistrationPage = () => {
           <PrimaryButton onClick={handleRegistration}>
             Зарегистрироваться
           </PrimaryButton>
-        </div>
+          <PrimaryButton onClick={handleEmailLogin}>Войти</PrimaryButton>
+          <div className='google-button'onClick={handleGoogleLogin}> Регистрация через Google</div>
+        </LoginFormContainer>
       </PageSpace>
     </div>
   );

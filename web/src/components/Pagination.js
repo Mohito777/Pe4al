@@ -16,17 +16,17 @@ function Pagination({ baseURL, numberOfPages, currentPage }) {
             to={`${baseURL}/${prevPage}`}
             className={clsx(currentPage <= 1 && "disabled")}
           >
-            <FiChevronLeft /> Предыдущая
+            <FiChevronLeft /> Назад
           </Link>
           <Link
             to={`${baseURL}/${nextPage}`}
             className={clsx(currentPage >= numberOfPages && "disabled")}
           >
-            Следующая <FiChevronRight />
+            Вперёд <FiChevronRight />
           </Link>
         </div>
         <ParagraphText>
-          page {currentPage} of {numberOfPages} pages
+         {currentPage} из {numberOfPages} 
         </ParagraphText>
       </PaginationStyles>
     </div>

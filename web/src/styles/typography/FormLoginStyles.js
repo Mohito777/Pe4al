@@ -3,13 +3,16 @@ import styled from "styled-components";
 import { FaGoogle } from "react-icons/fa";
 
 export const LoginFormContainer = styled.form`
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 100vw;
   background: linear-gradient(to right, #8e44ad, #3498db);
+  margin-top: 50px; /* Добавляем отступ сверху */
+
+
 `;
 
 export const FormGroup = styled.div`
@@ -36,6 +39,23 @@ export const PrimaryButton = styled.button`
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s;
+  &:hover {
+    background-color: #2980b9;
+  }
+`;
+
+export const OAuthButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px; /* Добавлено для разделения кнопок */
   &:hover {
     background-color: #2980b9;
   }

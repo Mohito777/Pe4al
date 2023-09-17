@@ -5,6 +5,7 @@ import SEO from "../components/SEO";
 import PageSpace from "../components/PageSpace";
 import BlogGrid from "../components/blog/BlogGrid";
 import Pagination from "../components/Pagination";
+import CommentForm from '../constants/comment-form';
 
 export const BlogsQuery = graphql`
   query blogListQuery($limit: Int!, $offset: Int!) {
@@ -58,6 +59,7 @@ function Blogs({ data, pageContext }) {
               baseURL='/blogs'
             />
           )}
+          <CommentForm />
         </div>
       </PageSpace>
     </>

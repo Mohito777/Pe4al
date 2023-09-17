@@ -24,12 +24,12 @@ function TopCategories() {
   `);
   const categories = data.allSanityFeatured.nodes[0].category;
 
-  console.log(categories);
+
   return (
     <TopCategoriesStyles>
-      <SectionTitle>Избранные статьи</SectionTitle>
+      <SectionTitle>Категории сайта</SectionTitle>
       <ParagraphText className="info">
-        Ну тут конечно же мамы вступились за своё дитятко))
+        Создай свою категорию или найди свою любимую
       </ParagraphText>
       <CategoryGrid categories={categories} />
     </TopCategoriesStyles>

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { FaGoogle } from "react-icons/fa";
 import { Title } from "../components/typography/Title";
 import PageSpace from "../components/PageSpace";
 import SEO from "../components/SEO";
-import { FormGroup, Input, PrimaryButton,LoginFormContainer } from "../styles/typography/FormLoginStyles";
+import { FormGroup, Input, PrimaryButton, LoginFormContainer,GitHubButton } from "../styles/typography/FormLoginStyles";
 import useFirebase from "../utils/useFirebase";
+import PageHeader from '../components/PageHeader';
 
 const RegistrationPage = () => {
   const firebase = useFirebase();
@@ -40,39 +40,63 @@ const RegistrationPage = () => {
     }
   };
 
+
+  const handleGitHubLogin = async () => {
+    try {
+      const provider = new firebase.auth.GithubAuthProvider();
+      await firebase.auth().signInWithPopup(provider);
+      // Вход выполнен успешно, вы можете выполнить перенаправление на другую страницу
+    } catch (error) {
+      setError(error.message);
+    }
+  };
   
 
   return (
     <div>
       <SEO title='Регистрация' />
       <PageSpace top={80} bottom={100}>
-        <LoginFormContainer>
-          <Title>Регистрация</Title>
-          {error && <div className='error-message'>{error}</div>}
-          <FormGroup>
-            <label>Email:</label>
-            <Input
-              type='email'
-              placeholder='Введите ваш email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+        <div>
+         <PageHeader title='Регистрация' />
+          <div className='login-form'>
+           
+         </div>
+          <LoginFormContainer>
+            <Title>Регистрация</Title>
+            {error && <div className='error-message'>{error}</div>}
+            <FormGroup>
+              <label>Email:</label>
+              <Input
+                type='email'
+                placeholder='Введите ваш email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </FormGroup>
+            <FormGroup>
+              <label>Пароль:</label>
+              <Input
+                type='password'
+                placeholder='Введите пароль'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </FormGroup>
+            <PrimaryButton onClick={handleRegistration}>
+              Зарегистрироваться
+            </PrimaryButton>
+            <PrimaryButton onClick={handleEmailLogin}>Войти</PrimaryButton>
+            <div className='google-button' onClick={handleGoogleLogin}>
+              {" "}
+              Регистрация через Google
+            </div>
+            <GitHubButton
+              className='github-button'
+              onClick={handleGitHubLogin}
             />
-          </FormGroup>
-          <FormGroup>
-            <label>Пароль:</label>
-            <Input
-              type='password'
-              placeholder='Введите пароль'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </FormGroup>
-          <PrimaryButton onClick={handleRegistration}>
-            Зарегистрироваться
-          </PrimaryButton>
-          <PrimaryButton onClick={handleEmailLogin}>Войти</PrimaryButton>
-          <div className='google-button'onClick={handleGoogleLogin}> Регистрация через Google</div>
-        </LoginFormContainer>
+            Регистрация через GitHub
+          </LoginFormContainer>
+        </div>
       </PageSpace>
     </div>
   );

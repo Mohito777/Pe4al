@@ -13,11 +13,11 @@ export const menu = [
   },
   {
     title: "Категории",
-    path: "/Categories",
+    path: "/categories",
   },
   {
     title: "Войти", // Добавляем новый пункт меню
-    path: "/LoginPage",
+    path: "/register",
     
   },
 ];
